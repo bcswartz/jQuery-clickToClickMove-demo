@@ -1,0 +1,25 @@
+-
+  id: 1
+  name: Pick up dog from vet
+  completed: No
+-
+  id: 2
+  name: Grocery shopping
+  completed: Yes
+-
+  id: 3
+  name: Pay electric bill
+  completed: No
+-
+  id: 4
+  name: Run dishwasher
+  completed: Yes
+-
+  id: 5
+  name: Clean living room
+  completed: No
+-
+  id: 6
+  name: Take recycling to curb
+  completed: No
+
