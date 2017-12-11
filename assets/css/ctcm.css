@@ -4,6 +4,16 @@ body {
 	margin:5px 2px 5px 6px;
 }
 
+#leftColumn {
+	width: 400px;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+#rightColumn {
+	width: 350px;
+}
+
 #demoTitle {
 	font-size:110%;
 }

@@ -2,46 +2,48 @@
 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: default
 ---
 
 <script type="text/javascript" src="assets/javascript/jquery-1.2.2.js"></script>
 <script type="text/javascript" src="assets/javascript/ctcm.js"></script>
 <link href="assets/css/ctcm.css" rel="stylesheet" type="text/css">
 
+<div id="leftColumn">
+    <h3 id="demoTitle">Click-To-Click Move Demo</h3>
 
-<h3 id="demoTitle">Click-To-Click Move Demo</h3>
+    <p class="demoHelp">Tap/click an item to manipulate it.</p>
 
-<p class="demoHelp">Tap/click an item to manipulate it.</p>
+    <p class="demoHelp">
+        Move - <img class="moveIconLegend" src="assets/images/move.png" />
+        Edit - <img class="editIconLegend" src="assets/images/edit.png" />
+        Delete - <img class="deleteIconLegend" src="assets/images/delete.png" />
+    </p>
+</div>
 
-<p class="demoHelp">
-    Move - <img class="moveIconLegend" src="assets/images/move.png" />
-    Edit - <img class="editIconLegend" src="assets/images/edit.png" />
-    Delete - <img class="deleteIconLegend" src="assets/images/delete.png" />
-</p>
-
-<ul id="mainList">
-    <!---Need hidden, empty list element to serve as template for new items (especially when list is empty!)--->
-    <li id="templateItem" class="itemLiT noShow">
-        <div class="itemDivT">
-            <input type="checkbox" class="itemCheckboxT" value="None" /> <span class="itemSpanT">None</span>
-            <span class="itemEditT noShow">
+<div id="rightColumn">
+    <ul id="mainList">
+        <!---Need hidden, empty list element to serve as template for new items (especially when list is empty!)--->
+        <li id="templateItem" class="itemLiT noShow">
+            <div class="itemDivT">
+                <input type="checkbox" class="itemCheckboxT" value="None" /> <span class="itemSpanT">None</span>
+                <span class="itemEditT noShow">
 				<input type="text" size="30" value="None" class="itemBoxT" maxlength="250" /><br />
 				<input type="button" class="itemUpdateT" value="Update" /><input type="button" class="itemUpdateCancelT" value="Cancel" />
 			</span>
-        </div>
-        <div class="controlDivT noShow">
-            <img class="moveIconT" src="assets/images/move.png" /> <img class="editIconT" src="assets/images/edit.png" /> <img class="deleteIconT" src="assets/images/delete.png" />
-        </div>
-    </li>
+            </div>
+            <div class="controlDivT noShow">
+                <img class="moveIconT" src="assets/images/move.png" /> <img class="editIconT" src="assets/images/edit.png" /> <img class="deleteIconT" src="assets/images/delete.png" />
+            </div>
+        </li>
 
-    {% for task in site.data.tasks %}
+        {% for task in site.data.tasks %}
         <li id="{{ task.id }}" class="itemLi">
             <div class="itemDiv">
                 {% if task.completed == "Yes" %}
-                    <input type="checkbox" class="itemCheckbox" value="{{ task.id }}" checked="checked" /> <span class="itemSpan">{{ task.name }}</span>
+                <input type="checkbox" class="itemCheckbox" value="{{ task.id }}" checked="checked" /> <span class="itemSpan">{{ task.name }}</span>
                 {% else %}
-                    <input type="checkbox" class="itemCheckbox" value="{{ task.id }}" /> <span class="itemSpan">{{ task.name }}</span>
+                <input type="checkbox" class="itemCheckbox" value="{{ task.id }}" /> <span class="itemSpan">{{ task.name }}</span>
                 {% endif %}
                 <span class="itemEdit noShow">
                         <input type="text" size="30" value="{{ task.name }}" class="itemBox" maxlength="250" /><br />
@@ -52,5 +54,6 @@ layout: home
                 <img class="moveIcon" src="assets/images/move.png" /> <img class="editIcon" src="assets/images/edit.png" /> <img class="deleteIcon" src="assets/images/delete.png" />
             </div>
         </li>
-    {% endfor %}
-</ul>
+        {% endfor %}
+    </ul>
+</div>
